@@ -1,105 +1,182 @@
-*{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
 }
 
-.body{
-    background-color: #222;
-}
+.card {
+    /* background: linear-gradient(141deg, #00feba, #61589e) ; */
+    /* background: linear-gradient(135deg, #ff9a9e, #fad0c4); */
+    /* background: linear-gradient(120deg, #ff0084, #ff8c00, #ffec00); */
 
-.card{
-    width: 90%;
-    max-width: 470px;
-    background: linear-gradient(141deg, #00feba, #6459a8) ;
-    color: #fff;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    padding: 40px 35px;
+    background: linear-gradient(145deg, #ff6b6b, #f06595, #d166d8, #8c77ff, #6a8cff);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
     text-align: center;
 }
 
-.search{
-    width: 100%;
+.search {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.search input{
-    border: 0;
-    outline: 0;
-    background-color: #ebfffc;
-    color: #555;
-    padding: 10px 25px;
-    height: 60px;
-    border-radius: 30px;
-    flex: 1; 
-    /* what is flex: 1 */
-    margin-right: 16px;
-    font-size: 18px;
+.search input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    flex-grow: 1;
+    font-size: 1.2rem;
 }
-.search button{
-    border: 0;
-    outline: 0;
-    background:#ebfffc ;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
+
+.search button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-left: 0;
+    background: #007BFF;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
 
-.search button img{
-    width: 16px;
+.search button img {
+    width: 20px;
+    height: 20px;
 }
 
-.weather-icon{
-    width: 170px;
-    margin-top: 30px;
+.place{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.weather h1{
-    font-size: 80px;
-    font-weight: 500;
+.error {
+    display: none;
+    color: red;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.weather h2{
-    font-size: 45px;
-    font-weight: 400;
-    margin-top: -10px;
+.weather {
+    display: none;
 }
 
-.details{
+.weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.temp {
+    font-size: 3em;
+}
+
+.city{
+    font-size: 1.5em;
+}
+.country{
+    font-size: 1.5em;
+    margin-left: 0.6rem;
+}
+
+.description{
+    color: #ffffff;
+    margin: -1.5rem 0 0 0 ;
+    font-size: 1.7rem;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.details .col {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;
 }
 
-.col{
-    display: flex;
-    align-items: center;
-    text-align: left;
-}
-
-.col img{
+.details .col img {
     width: 40px;
+    height: 40px;
     margin-right: 10px;
 }
 
 .humidity, .wind{
     font-size: 20px;
-    margin-top: -2px;
+    margin-bottom: -0.8rem;
 }
 
-.weather{
-    display: none;
+.search input
+{
+    box-sizing: border-box;
+    outline: none;
 }
 
-.error{
-    margin-top: 1rem ;
-    font-size: 1.1rem;
-    display: none;
+
+/* Media Queries */
+
+/* Tablets and small desktops */
+@media (max-width: 780px) {
+    .card {
+        max-width: 90%;
+    }
+
+    .temp {
+        font-size: 2.5em;
+    }
+
+    .city, .country {
+        font-size: 1.2em;
+    }
+
+    .details .col img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .search {
+        flex-direction: column;
+    }
+
+    .search input, .search button {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .search button {
+        border-radius: 5px;
+    }
+
+    .temp {
+        font-size: 2em;
+    }
+
+    .city, .country {
+        font-size: 1em;
+    }
+
+    .details {
+        flex-direction: column;
+    }
+
+    .details .col {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .details .col img {
+        width: 25px;
+        height: 25px;
+    }
 }
